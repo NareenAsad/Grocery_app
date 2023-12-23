@@ -5,21 +5,6 @@ class HomeView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        leading: IconButton(
-          onPressed: () {
-            Navigator.pop(context);
-          },
-          icon: Icon(Icons.arrow_back_ios_new_rounded),
-        ),
-      ),
-      body: Center(
-        child: Text(
-          'Home Screen Content',
-          style: TextStyle(fontSize: 20),
-        ),
-      ),
-    );
+    return Scaffold();
   }
 }
