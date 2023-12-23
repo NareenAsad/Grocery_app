@@ -2,16 +2,17 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 class DialPad extends StatefulWidget {
+  final TextEditingController textController;
+
+  const DialPad({required this.textController});
   @override
   _DialPadState createState() => _DialPadState();
 }
 
 class _DialPadState extends State<DialPad> {
-  TextEditingController _textController = TextEditingController();
-
   void _updateTextField(String value) {
     setState(() {
-      _textController.text += value;
+      widget.textController.text += value;
     });
   }
 

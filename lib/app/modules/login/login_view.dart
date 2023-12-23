@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:grocery_app/app/components/custom_widgets.dart';
+import 'package:grocery_app/app/components/login_widget.dart';
 import 'package:grocery_app/app/modules/home/home_view.dart';
 
 class LoginView extends StatelessWidget {
-  const LoginView({super.key});
+  LoginView({super.key});
+
+  TextEditingController _textController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -43,6 +45,7 @@ class LoginView extends StatelessWidget {
                     textAlign: TextAlign.center),
                 TextField(
                     keyboardType: TextInputType.number,
+                    controller: _textController,
                     inputFormatters: [FilteringTextInputFormatter.digitsOnly],
                     decoration: InputDecoration(
                         hintText: '+44 | (000) 000-00-00',
@@ -74,7 +77,7 @@ class LoginView extends StatelessWidget {
                         color: Colors.grey),
                     textAlign: TextAlign.center),
                 SizedBox(height: 20),
-                DialPad(),
+                DialPad(textController: _textController),
               ],
             )
           ],
