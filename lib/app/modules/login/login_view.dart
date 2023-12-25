@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:grocery_app/app/components/login_widget.dart';
-import 'package:grocery_app/app/modules/home/home_view.dart';
+import 'package:grocery_app/app/modules/home/widgets/home_widget.dart';
+import 'package:grocery_app/app/modules/login/widgets/login_widget.dart';
 
 class LoginView extends StatelessWidget {
   LoginView({super.key});
@@ -43,29 +43,54 @@ class LoginView extends StatelessWidget {
                         fontWeight: FontWeight.w500,
                         color: Colors.grey),
                     textAlign: TextAlign.center),
-                TextField(
-                    keyboardType: TextInputType.number,
-                    controller: _textController,
-                    inputFormatters: [FilteringTextInputFormatter.digitsOnly],
-                    decoration: InputDecoration(
-                        hintText: '+44 | (000) 000-00-00',
+                Row(mainAxisAlignment: MainAxisAlignment.center, children: [
+                  SizedBox(width: 50),
+                  Text(
+                    '+44 |',
+                    style: TextStyle(
+                      fontSize: 24,
+                      fontFamily: 'Poppins-Regular',
+                      fontWeight: FontWeight.w700,
+                      color: Colors.black,
+                    ),
+                    textAlign: TextAlign.center,
+                  ),
+                  Expanded(
+                    child: TextField(
+                      keyboardType: TextInputType.number,
+                      controller: _textController,
+                      inputFormatters: [FilteringTextInputFormatter.digitsOnly],
+                      decoration: InputDecoration(
+                        hintText: '(000) 000-00-00',
                         border: InputBorder.none,
-                        hintStyle: TextStyle(fontSize: 24)),
-                    textAlign: TextAlign.center),
+                        hintStyle: TextStyle(fontSize: 24),
+                      ),
+                      textAlign: TextAlign.center,
+                    ),
+                  ),
+                ]),
                 SizedBox(height: 15),
                 ElevatedButton(
-                    onPressed: () {
-                      Navigator.push(context,
-                          MaterialPageRoute(builder: (context) => HomeView()));
-                    },
-                    child: Text("Continue",
-                        style: TextStyle(fontSize: 20, color: Colors.white)),
-                    style: ButtonStyle(
-                      backgroundColor: MaterialStateProperty.all(
-                          Color.fromRGBO(0, 153, 89, 1)),
-                      padding: MaterialStateProperty.all(
-                          EdgeInsets.symmetric(horizontal: 90, vertical: 17)),
-                    )),
+                  onPressed: //_textController.text.isEmpty
+                      // ? null
+                      // :
+                      () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => MyHomePage()),
+                    );
+                  },
+                  child: Text(
+                    "Continue",
+                    style: TextStyle(fontSize: 20, color: Colors.white),
+                  ),
+                  style: ButtonStyle(
+                    backgroundColor: MaterialStateProperty.all(
+                        Color.fromRGBO(0, 153, 89, 1)),
+                    padding: MaterialStateProperty.all(
+                        EdgeInsets.symmetric(horizontal: 90, vertical: 17)),
+                  ),
+                ),
                 SizedBox(height: 15),
                 Text(
                     'By clicking on “Continue” you are                                       '

@@ -96,7 +96,7 @@ class _DialPadState extends State<DialPad> {
                 IconButton(
                     onPressed: () {},
                     icon: Icon(
-                      Icons.close_rounded,
+                      Icons.backspace_outlined,
                       size: 20,
                       color: Colors.black,
                     )),

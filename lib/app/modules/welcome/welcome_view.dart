@@ -71,9 +71,9 @@ class WelcomeView extends StatelessWidget {
                         MaterialPageRoute(builder: (context) => LoginView()));
                   },
                   color: Color.fromRGBO(0, 153, 89, 1),
-                  padding: EdgeInsets.all(20),
+                  padding: EdgeInsets.symmetric(horizontal: 35, vertical: 20),
                   shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(30),
+                    borderRadius: BorderRadius.circular(35),
                   ),
                   child: Text(
                     'SHOP NOW',
