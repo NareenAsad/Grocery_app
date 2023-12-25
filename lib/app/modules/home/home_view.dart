@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:grocery_app/app/modules/home/widgets/home_custom_widget.dart';
+import 'package:grocery_app/app/modules/product_detail/product_detail_view.dart';
+import 'package:grocery_app/app/modules/products/products_view.dart';
 
 class HomeView extends StatefulWidget {
   const HomeView({Key? key}) : super(key: key);
@@ -126,14 +128,24 @@ class _HomeViewState extends State<HomeView> {
                               fontSize: 18,
                               fontWeight: FontWeight.w700),
                         ),
-                        Text(
-                          'See all',
-                          style: TextStyle(
+                        GestureDetector(
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => ProductsView()),
+                            );
+                          },
+                          child: Text(
+                            'See all',
+                            style: TextStyle(
                               fontFamily: 'Poppins',
                               fontSize: 14,
                               color: Colors.green,
-                              fontWeight: FontWeight.w500),
-                        ),
+                              fontWeight: FontWeight.w500,
+                            ),
+                          ),
+                        )
                       ],
                     ),
                     SizedBox(height: 20),
@@ -177,24 +189,36 @@ class _HomeViewState extends State<HomeView> {
                       ],
                     ),
                     SizedBox(height: 20),
-                    SingleChildScrollView(
-                      scrollDirection: Axis.horizontal,
-                      child: Wrap(
-                        runSpacing: 6,
-                        spacing: 6,
-                        children: [
-                          ProductCard(
-                            t2: '1kg, \$4',
-                            image:
-                                'assets/images/grocery_images/bellPepper.png',
-                            title: 'Bell Pepper Red',
-                          ),
-                          ProductCard(
-                            t2: '1kg, \$45',
-                            image: 'assets/images/grocery_images/lambmeat.png',
-                            title: 'Lamb Meat',
-                          )
-                        ],
+                    InkWell(
+                      onTap: () {
+                        // Navigator.push(
+                        //   context,
+                        //   MaterialPageRoute(
+                        //     builder: (context) => ProductDetailPage(
+                        //     ),
+                        //   ),
+                        // );
+                      },
+                      child: SingleChildScrollView(
+                        scrollDirection: Axis.horizontal,
+                        child: Wrap(
+                          runSpacing: 6,
+                          spacing: 6,
+                          children: [
+                            ProductCard(
+                              t2: '1kg, \$4',
+                              image:
+                                  'assets/images/grocery_images/bellPepper.png',
+                              title: 'Bell Pepper Red',
+                            ),
+                            ProductCard(
+                              t2: '1kg, \$45',
+                              image:
+                                  'assets/images/grocery_images/lambmeat.png',
+                              title: 'Lamb Meat',
+                            )
+                          ],
+                        ),
                       ),
                     ),
                   ],

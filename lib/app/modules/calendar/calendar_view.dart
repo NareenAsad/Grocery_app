@@ -10,10 +10,11 @@ class CalendarScreen extends StatefulWidget {
 class _CalendarScreenState extends State<CalendarScreen> {
   @override
   Widget build(BuildContext context) {
-    return Container(
-      color: Colors.orange,
-      child: Center(
-        child: Text('Calendar Screen'),
+    return Scaffold(
+      body: Image.asset(
+        'assets/images/calendar.jpg',
+        height: double.infinity,
+        width: double.infinity,
       ),
     );
   }

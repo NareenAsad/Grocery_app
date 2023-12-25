@@ -8,26 +8,6 @@ class ProfileScreen extends StatefulWidget {
 }
 
 class _ProfileScreenState extends State<ProfileScreen> {
-  List<String> items = [
-    'Red Onions',
-    'Fresh Tomatos',
-    'Potatos',
-    'Red Beens',
-  ];
-
-  List<int> prices = [
-    45,
-    45,
-    45,
-    45,
-  ];
-
-  List<int> quantities = [
-    1,
-    1,
-    1,
-    1,
-  ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -42,7 +22,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
         children: [
           Positioned(
             child: Image.asset(
-              'assets/images/Rectangle 2.png',
+              'assets/images/map.png',
             ),
           ),
         ],

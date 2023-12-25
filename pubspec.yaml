@@ -62,6 +62,7 @@ flutter:
   assets:
     - assets/images/
     - assets/images/grocery_images/
+    - assets/images/calendar.jpg
   # assets:
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg
