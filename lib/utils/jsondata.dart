@@ -2,7 +2,7 @@ final Map<String, dynamic> groceryProduct = {
   "categories": [
     {
       "id": 1,
-      "name": "Vegetables",
+      "name": "Categories",
       "products": [
         {
           "id": 11,
@@ -22,7 +22,7 @@ final Map<String, dynamic> groceryProduct = {
         },
         {
           "id": 13,
-          "name": "Bell Color Pepper",
+          "name": "Color Pepper",
           "price": '1kg, \$5',
           "description":
               'Colorful, crunchy peppers with a mild and sweet taste, available in various hues (red, yellow, green) that add flavor and vibrant color to meals.',
@@ -70,5 +70,27 @@ final Map<String, dynamic> groceryProduct = {
         },
       ],
     },
+    {
+      "id": 2,
+      "name": "Best Selling",
+      "products": [
+        {
+          "id": 21,
+          "name": "Red Pepper",
+          "price": '1kg, \$4',
+          "description":
+              'Red bell peppers offer a vibrant sweetness, tinged with a delightful tanginess, adding depth to any dish they grace.',
+          "imageUrl": "assets/images/grocery_images/bellPepper.png",
+        },
+        {
+          "id": 22,
+          "name": "Lamb meat",
+          "price": '1kg, \$45',
+          "description":
+              'Lamb meat boasts a robust, savory taste thats both distinctive and rich.',
+          "imageUrl": "assets/images/grocery_images/lambmeat.png",
+        },
+      ],
+    }
   ],
 };

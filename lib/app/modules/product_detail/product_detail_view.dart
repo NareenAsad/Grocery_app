@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:grocery_app/app/modules/cart/cart_view.dart';
+import 'package:grocery_app/app/modules/product_detail/widgets/product_detail_widget.dart';
 
 class ProductDetailPage extends StatefulWidget {
   String image;
@@ -73,7 +74,7 @@ class _ProductDetailPageState extends State<ProductDetailPage> {
                       Text(
                         widget.title,
                         style: TextStyle(
-                            fontSize: 20, fontWeight: FontWeight.w700),
+                            fontSize: 18, fontWeight: FontWeight.w700),
                       ),
                       MaterialButton(
                         onPressed: () {
@@ -144,90 +145,32 @@ class _ProductDetailPageState extends State<ProductDetailPage> {
                     ),
                   ),
                   SizedBox(height: 30),
-                  Column(
-                    children: [
-                      Row(),
-                    ],
-                  ),
                   Row(
                     children: [
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: [
-                          Image.asset('assets/images/1.png'),
-                          Text('100%',
-                              style: TextStyle(
-                                  fontSize: 16,
-                                  fontWeight: FontWeight.w500,
-                                  fontFamily: 'Poppins',
-                                  color: Colors.green)),
-                          Text('Organic',
-                              style: TextStyle(
-                                  fontWeight: FontWeight.w400,
-                                  fontFamily: 'Poppins',
-                                  fontSize: 12,
-                                  color: Colors.grey)),
-                        ],
+                      ProductInfoWidget(
+                        image: 'assets/images/1.png',
+                        primaryText: '100%',
+                        secondaryText: 'Organic',
                       ),
-                      SizedBox(width: 100),
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: [
-                          Image.asset('assets/images/2.png'),
-                          Text('1 Year',
-                              style: TextStyle(
-                                  fontSize: 16,
-                                  fontWeight: FontWeight.w500,
-                                  fontFamily: 'Poppins',
-                                  color: Colors.green)),
-                          Text('Expiration',
-                              style: TextStyle(
-                                  fontWeight: FontWeight.w400,
-                                  fontFamily: 'Poppins',
-                                  fontSize: 12,
-                                  color: Colors.grey)),
-                        ],
+                      ProductInfoWidget(
+                        image: 'assets/images/2.png',
+                        primaryText: '1 Year',
+                        secondaryText: 'Expiration',
                       ),
                     ],
                   ),
+                  SizedBox(height: 30),
                   Row(
                     children: [
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: [
-                          Image.asset('assets/images/3.png'),
-                          Text('8.4',
-                              style: TextStyle(
-                                  fontSize: 16,
-                                  fontWeight: FontWeight.w500,
-                                  fontFamily: 'Poppins',
-                                  color: Colors.green)),
-                          Text('Reviews',
-                              style: TextStyle(
-                                  fontWeight: FontWeight.w400,
-                                  fontFamily: 'Poppins',
-                                  fontSize: 12,
-                                  color: Colors.grey)),
-                        ],
+                      ProductInfoWidget(
+                        image: 'assets/images/3.png',
+                        primaryText: '8.4',
+                        secondaryText: 'Reviews',
                       ),
-                      SizedBox(width: 100),
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: [
-                          Image.asset('assets/images/4.png'),
-                          Text('80 kcal',
-                              style: TextStyle(
-                                  fontSize: 16,
-                                  fontWeight: FontWeight.w500,
-                                  fontFamily: 'Poppins',
-                                  color: Colors.green)),
-                          Text('100 GRM',
-                              style: TextStyle(
-                                  fontWeight: FontWeight.w400,
-                                  fontFamily: 'Poppins',
-                                  fontSize: 12,
-                                  color: Colors.grey)),
-                        ],
+                      ProductInfoWidget(
+                        image: 'assets/images/4.png',
+                        primaryText: '80 kcal',
+                        secondaryText: '100 GRM',
                       ),
                     ],
                   ),

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:grocery_app/app/modules/product_detail/product_detail_view.dart';
 
 class CircularCard extends StatelessWidget {
   String image;
@@ -12,11 +11,10 @@ class CircularCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
-      shape: CircleBorder(side: BorderSide(color: Colors.grey)),
+      shape: CircleBorder(),
       child: CircleAvatar(
         radius: 35,
         backgroundImage: AssetImage(image),
-        backgroundColor: Colors.grey,
       ),
     );
   }
@@ -72,9 +70,7 @@ class ProductCard extends StatelessWidget {
               children: [
                 SizedBox(width: 70),
                 MaterialButton(
-                  onPressed: () {
-                    // Navigator.push(context, MaterialPageRoute(builder: (context) => ProductDetailPage()));
-                  },
+                  onPressed: () {},
                   shape: CircleBorder(),
                   padding: EdgeInsets.all(8),
                   child: CircleAvatar(

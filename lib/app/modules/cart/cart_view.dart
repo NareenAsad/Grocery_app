@@ -62,7 +62,7 @@ class _CartScreenState extends State<CartScreen> {
               title: Text(items[index],
                   style: TextStyle(
                       fontFamily: 'Poppins',
-                      fontSize: 16,
+                      fontSize: 14,
                       color: Colors.black,
                       fontWeight: FontWeight.w600)),
               subtitle: Text('Price: \$${prices[index]}',

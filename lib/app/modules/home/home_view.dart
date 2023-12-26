@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:grocery_app/app/modules/home/widgets/home_custom_widget.dart';
 import 'package:grocery_app/app/modules/product_detail/product_detail_view.dart';
 import 'package:grocery_app/app/modules/products/products_view.dart';
+import 'package:grocery_app/utils/jsondata.dart';
 
 class HomeView extends StatefulWidget {
   const HomeView({Key? key}) : super(key: key);
@@ -11,6 +12,9 @@ class HomeView extends StatefulWidget {
 }
 
 class _HomeViewState extends State<HomeView> {
+  final List<Map<String, dynamic>> bestSellingProducts =
+      groceryProduct['categories'][1]['products'];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -189,38 +193,36 @@ class _HomeViewState extends State<HomeView> {
                       ],
                     ),
                     SizedBox(height: 20),
-                    InkWell(
-                      onTap: () {
-                        // Navigator.push(
-                        //   context,
-                        //   MaterialPageRoute(
-                        //     builder: (context) => ProductDetailPage(
-                        //     ),
-                        //   ),
-                        // );
-                      },
-                      child: SingleChildScrollView(
+                    SingleChildScrollView(
                         scrollDirection: Axis.horizontal,
                         child: Wrap(
-                          runSpacing: 6,
                           spacing: 6,
-                          children: [
-                            ProductCard(
-                              t2: '1kg, \$4',
-                              image:
-                                  'assets/images/grocery_images/bellPepper.png',
-                              title: 'Bell Pepper Red',
-                            ),
-                            ProductCard(
-                              t2: '1kg, \$45',
-                              image:
-                                  'assets/images/grocery_images/lambmeat.png',
-                              title: 'Lamb Meat',
-                            )
-                          ],
-                        ),
-                      ),
-                    ),
+                          runSpacing: 6,
+                          children: List.generate(bestSellingProducts.length,
+                              (index) {
+                            final product = bestSellingProducts[index];
+                            return InkWell(
+                              onTap: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) => ProductDetailPage(
+                                      title: product['name'],
+                                      image: product['imageUrl'],
+                                      price: product['price'],
+                                      detail: product['description'],
+                                    ),
+                                  ),
+                                );
+                              },
+                              child: ProductCard(
+                                t2: '${product['price']}',
+                                image: product['imageUrl'],
+                                title: product['name'],
+                              ),
+                            );
+                          }),
+                        )),
                   ],
                 ))
           ]),

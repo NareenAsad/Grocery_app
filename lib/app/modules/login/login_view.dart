@@ -43,17 +43,16 @@ class LoginView extends StatelessWidget {
                         fontWeight: FontWeight.w500,
                         color: Colors.grey),
                     textAlign: TextAlign.center),
-                Row(mainAxisAlignment: MainAxisAlignment.center, children: [
+                Row(children: [
                   SizedBox(width: 50),
                   Text(
-                    '+44 |',
+                    '+44 | ',
                     style: TextStyle(
                       fontSize: 24,
                       fontFamily: 'Poppins-Regular',
                       fontWeight: FontWeight.w700,
                       color: Colors.black,
                     ),
-                    textAlign: TextAlign.center,
                   ),
                   Expanded(
                     child: TextField(
@@ -63,9 +62,12 @@ class LoginView extends StatelessWidget {
                       decoration: InputDecoration(
                         hintText: '(000) 000-00-00',
                         border: InputBorder.none,
-                        hintStyle: TextStyle(fontSize: 24),
                       ),
-                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                          fontSize: 24,
+                          fontFamily: 'Poppins-Regular',
+                          fontWeight: FontWeight.w700,
+                          color: Colors.black),
                     ),
                   ),
                 ]),
